@@ -11,10 +11,13 @@ export default {
     },
     methods: {
         onClick() {
-            console.log('Button clicked')
+            // console.log('Button clicked')
+            // this.$emit('toggle-add-task')
+            this.$emit('header-button-click')
         },
         
-    }
+    },
+    emits: ['header-button-click']
 }
 </script>
 
