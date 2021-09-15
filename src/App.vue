@@ -50,6 +50,7 @@ export default {
     this.tasks = [...this.tasks, data]
     // this.tasks = [...this.tasks, task]
   },
+  
   async deleteTask(id) {
     // console.log('task', id)
     if(confirm("Are you sure?")) {
@@ -64,14 +65,12 @@ export default {
     // this.tasks = this.tasks.filter((task) => task.id !== id)
     }
   },
+
   async toggleReminder(id) {
     // console.log('remider', id)
     const taskToToggle = this.fetchTask(id)
 
-    const updateTask = { 
-      ...taskToToggle, 
-      reminder: !taskToToggle.reminder
-      }
+    const updateTask = { ...taskToToggle, reminder: !taskToToggle.reminder}
 
     const res = await fetch(`api/tasks/${id}`, {
       method: 'PUT',
@@ -84,11 +83,13 @@ export default {
     const data = await res.json();
 
     this.tasks = this.tasks.map((task) => 
-    task.id === id ? { ...task, reminder: data.reminder} : task)
+    task.id === id ? { ...task, reminder: data.reminder } : task)
   },
+
   toggleAddTask() {
     this.showAddTask = !this.showAddTask
   },
+
   async fetchTasks() {
   //  const res = await fetch("http://localhost:5000/tasks")
    const res = await fetch("api/tasks")
@@ -96,6 +97,7 @@ export default {
    const data = await res.json();
    return data;
   },
+
   async fetchTask(id) {
   //  const res = await fetch(`http://localhost:5000/tasks/${id}`)
    const res = await fetch(`api/tasks/${id}`)

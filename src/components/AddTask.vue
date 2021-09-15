@@ -29,7 +29,7 @@ export default {
         return {
             text: '',
             day: '',
-            reminder: ''
+            reminder: false
         }
     },
     methods: {

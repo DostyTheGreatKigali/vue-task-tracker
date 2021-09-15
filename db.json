@@ -7,10 +7,16 @@
       "reminder": true
     },
     {
-      "text": "Go Home",
-      "day": "Tommorow morning",
-      "reminder": "",
+      "text": "Call Richie",
+      "day": "September 20th at 5pm",
+      "reminder": true,
       "id": 2
+    },
+    {
+      "text": "Cook",
+      "day": "Tommorow morning",
+      "reminder": false,
+      "id": 3
     }
   ]
 }
